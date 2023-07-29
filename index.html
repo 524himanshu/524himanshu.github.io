@@ -1,52 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Creative Profile Page 🌟</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-family: 'Courier New', monospace;
+            font-size: 36px;
+            color: #00a0b0;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        h2 {
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 24px;
+            color: #d35d6e;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        img {
+            max-width: 200px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        audio, video {
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+        th {
+            color: #ff7400;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        li {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #ff4e50;
+            color: white;
+            border-radius: 20px;
+            margin: 5px;
+        }
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-style: italic;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
-  <table>
-    <tr>
-      <th colspan="2" style="background-color:red;">
-        <h1 title="My profile Page"><center>My Profile Page</center></h1>
-        <h2 style="background-color:red;"><center>This is my profile page. Here you can find my personal details, skill sets, photograph, intro audio, video, etc.</center></h2>
-      </th>
-    </tr>
-    <tr>
-      <td valign="top">
-        <img src="photo.jpg" alt="My photo" align="right" width="160px" height="auto">
-        <h2>Personal Details</h2>
-        <p>
-          <b>Name:</b> Himanshu Menghani<br>
-          <b>Age:</b> 19<br>
-          <b>Address:</b> Ulhasnagar<br>
-          <b>Phone:</b> 7769949282<br>
-          <b>Email:</b> <a href="mailto:2021.himanshu.menghani@ves.ac.in">2021.himanshu.menghani@ves.ac.in</a>
+    <h1>🌟 Himanshu Menghani🌟</h1>
+    <p style="text-align: center;">Software Developer</p>
+    <pre style="text-align: center;">
+
+    </pre>
+    <section>
+        <h2>About Me</h2>
+        <img src="photo.jpg" alt="John Doe's Profile Photo">
+        <p style="text-align: center;">
+            Hello, I am Himanshu Menghani, a passionate engineering student with a keen interest in web development.
         </p>
-        <hr>
+        <audio controls>
+            <source src="himanshu_audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <video controls>
+            <source src="intro.mp4" type="video/mp4">
+            Your browser does not support the video element.
+        </video>
+    </section>
+    <section>
+        <h2>Personal Details</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <td>John Doe</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>30</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><a href="mailto:2021.himanshu.menghani@ves.ac.in">2021.himanshu.menghani@ves.ac.in</a></td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>Ulhasnagar, India</td>
+            </tr>
+        </table>
+    </section>
+    <section>
         <h2>Skill Sets</h2>
         <ul>
-          <li>Web development</li>
-          <li>Software development</li>
-          <li>Data science</li>
-          <li>Machine learning</li>
-          <li>Artificial intelligence</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>React</li>
+            <li>Node.js</li>
         </ul>
-        <hr>
-        <h2>Intro Audio</h2>
-        <audio controls>
-          <source src="himanshu_audio.mp3" type="audio/mpeg">
-        </audio>
-        <hr>
-        <h2>Video</h2>
-        <video controls width="640" height="360">
-          <source src="intro.mp4" type="video/mp4">
-        </video>
-        <hr>
-        <h2>Links</h2>
-        <b>GitHub:</b> <a href="https://github.com/524himanshu">Himanshu's Github</a><br>
-        <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/himanshu-menghani-926394182">Himanshu's LinkedIn</a><br>
-      </td>
-    </tr>
-  </table>
+    </section>
+    <footer>
+        <p>Contact me at <a href="mailto:2021.himanshu.menghani@ves.ac.in">2021.himanshu.menghani@ves.ac.in</a></p>
+    </footer>
 </body>
 </html>
