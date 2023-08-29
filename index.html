@@ -1,84 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🎨 Himanshu's Creative Profile Page</title>
+    <title>My Profile</title>
 </head>
-<body>
-<header>
-  <h1> Himanshu Menghani  </h1>
-  <p> Engineering Student </p>     
-</header>
+<body style="background-color: #f5f5f5;">
 
-<main>
-  <section>
-    <h2>About Me</h2>
-    <figure>
-      <img src="photo.jpg" alt="Himanshu Menghani's Profile Photo" height="300" width="auto">
-      <figcaption>Hello, I am Himanshu Menghani, a passionate engineering student with a keen interest in web development.</figcaption>
-    </figure>
-  </section>
+    <header style="text-align: center; background-color: rgb(195, 188, 180); padding:18px;">
+        <h1>My Profile</h1>
+    </header>
 
-  <section>
-    <h2>My Videos</h2>
-    <video controls width="640" height="360">
-      <source src="intro.mp4" type="video/mp4">
-      Your browser does not support the video element.
-    </video>
-  </section>
-
-  <section>
-    <h2>My Audio</h2>
-    <audio controls>
-      <source src="himanshu_audio.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-  </section>
-
-
-    <h2>Personal Details</h2>
-    <table border="1px" style="width:50%">
- 
-      <tr>
-        <td>Name</td>
-        <td>Himanshu Menghani</td>
-      </tr>
-      <tr>
-        <td>Age</td>
-        <td>20</td>
+    <div class="container" style="max-width: 900px; margin: 0 auto; padding: 20px; background-color: #fff;">
+        <h2 style="text-align: center;">Personal Details</h2>
         
-      </tr>
-      <tr>
-        <td>Email</td>
-        <td>2021.himanshu.menghani@ves.ac.in</td>
-      
-      </tr>
-      
-      <tr>
-        <td>Location</td>
-        <td>Ulhasnagar , India</td>
-      
-      </tr>
+        <!--Personal Details-->
+        <section style="display:flex; justify-content : space-evenly; align-items: center; margin-bottom: 20px;">
+            <img src="photo.jpg" alt="Profile Picture" style="border-radius: 50%; height: 200%; width: 200px;">
+            <ul style="list-style: none; padding: 0; font-size: 20px;">
+                <li><strong>Name:</strong> Himanshu Menghani </li>
+                <li><strong>Age:</strong> 19 </li>
+                <li><strong>Mail-Id:</strong> <a href="mailto:2021.himanshu.menghani@ves.ac.in"> 2021.himanshu.menghani@ves.ac.in </a> 
+                <li><strong>Location:</strong> Ulhasnagar, Maharashtra</li>
+            </ul>
+        </section>
+
+        <!--Skill Sets-->
+        <h2 style="text-align: center;">Skills Set</h2>
+        <section style="display: flex; justify-content: space-around; padding: 10px;">
+        <table style="width: 45%; border-collapse: collapse; margin-right: 10px;">
+        <tr>
+            <td colspan="2" style="padding: 10px; border: 1px solid black; text-align:center;"><strong><em>Frontend Skills</em></strong></td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid black;">HTML</td>
+            <td style="padding: 10px; border: 1px solid black;">CSS</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid black;">JavaScript</td>
+            <td style="padding: 10px; border: 1px solid black;">React</td>
+        </tr>
     </table>
- 
 
-  <section>
-    <h2>Skill Sets</h2>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>Python</li>
-      <li>React</li>
-      <li>Node.js</li>
-    </ul>
-  </section>
-</main>
+    <table style="width: 45%; border-collapse: collapse;">
+        <tr>
+            <td colspan="2" style="padding: 10px; border: 1px solid black;text-align:center;"><Strong><em>Backend Skills</em></Strong></td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid black;">MySQL,Mongodb</td>
+            <td style="padding: 10px; border: 1px solid black;">Python</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid black;">Java</td>
+            <td style="padding: 10px; border: 1px solid black;">Node.js</td>
+        </tr>
+    </table>
+</section>
 
-<footer>
-  <p>Contact me at <a href="mailto:2021.himanshu.menghani@ves.ac.in">2021.himanshu.menghani@ves.ac.in</a></p>
-</footer>
+
+         <!--Audio-->
+        <section>
+            <h2 style="text-align: center;">Audio</h2>
+            <audio controls src="himanshu_audio.mp3"></audio>
+        </section>
+
+         <!--Video-->
+        <section>
+            <h2 style="text-align: center;">Video</h2>
+            <video controls src="intro.mp4" style="height: 100%; width: 50%;"></video>
+        </section>
+
+         <!--Social Media-->
+        <section>
+            <h2 style="text-align: center;">Social Media</h2>
+            <div style="display: flex; justify-content: space-around;">
+        <a href="https://in.linkedin.com/in/himanshu-menghani-926394182" style="text-decoration: none; color: #0074D9; font-size: 20px;">LinkedIn</a>
+        <a href="https://github.com/524himanshu" style="text-decoration: none; color: #0074D9; font-size: 20px;">GitHub</a>
+            </div>
+        </section>
+
+     <!--Footer-->
+    <footer style="text-align: center; padding: 10px; background-color:rgb(195, 188, 180);">
+        <p> 2023 Profile Page. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
