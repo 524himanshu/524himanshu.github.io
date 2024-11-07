@@ -1,88 +1,478 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>My Profile</title>
-</head>
-<body style="background-color: #f5f5f5;">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Himanshu's Portfolio Website</title>
 
-    <header style="text-align: center; background-color: rgb(195, 188, 180); padding:18px;">
-        <h1>My Profile</h1>
+    <!-- box icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- header design -->
+    <header class="header">
+      <a href="#" class="logo"><span>Himanshu.</span></a>
+
+      <i class="bx bx-menu" id="menu-icon"></i>
+
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#stats-card">Statistics</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#portfolio">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <i class="bx bx-toggle-left" id="theme-toggle"></i>
     </header>
 
-    <div class="container" style="max-width: 900px; margin: 0 auto; padding: 20px; background-color: #fff;">
-        <h2 style="text-align: center;">Personal Details</h2>
-        
-        <!--Personal Details-->
-        <section style="display:flex; justify-content : space-evenly; align-items: center; margin-bottom: 20px;">
-            <img src="photo.jpg" alt="Profile Picture" style="border-radius: 50%; height: 200%; width: 200px;">
-            <ul style="list-style: none; padding: 0; font-size: 20px;">
-                <li><strong>Name:</strong> Himanshu Menghani </li>
-                <li><strong>Age:</strong> 19 </li>
-                <li><strong>Mail-Id:</strong> <a href="mailto:2021.himanshu.menghani@ves.ac.in"> 2021.himanshu.menghani@ves.ac.in </a> 
-                <li><strong>Location:</strong> Ulhasnagar, Maharashtra</li>
-            </ul>
-        </section>
+    <!-- home section design -->
+    <section class="home" id="home">
+      <div class="home-content">
+        <h3>Hello, It's Me</h3>
+        <h1><span>Himanshu</span></h1>
+        <h3>And I'm a <span class="typed-text">Student</span></h3>
+        <p>
+          Hello! I'm <span>Himanshu</span> Menghani, an aspiring Information
+          Technology Engineer based in Mumbai. I am currently pursuing my degree
+          from VESIT, Chembur, with a passion for the ever-evolving world of
+          technology. My focus is on mastering diverse IT domains, including
+          coding, software development, and emerging tech trends.
+        </p>
+        <div class="social-media">
+          <a href="https://github.com/524himanshu"
+            ><i class="bx bxl-github"></i
+          ></a>
+          <a href="https://x.com/Messedup_feelin"
+            ><i class="bx bxl-twitter"></i
+          ></a>
+          <a href="https://www.instagram.com/himanshumenghani524/"
+            ><i class="bx bxl-instagram"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/himanshumenghani524/"
+            ><i class="bx bxl-linkedin"></i
+          ></a>
+        </div>
+        <a
+          href="HIMANSHU MENGHANI RESUME.pdf"
+          download="HIMANSHU MENGHANI RESUME.pdf"
+          class="btn download-cv"
+          >Download CV</a
+        >
+      </div>
 
-        <!--Skill Sets-->
-        <h2 style="text-align: center;">Skills Set</h2>
-        <section style="display: flex; justify-content: space-around; padding: 10px;">
-        <table style="width: 45%; border-collapse: collapse; margin-right: 10px;">
-        <tr>
-            <td colspan="2" style="padding: 10px; border: 1px solid black; text-align:center;"><strong><em>Frontend Skills</em></strong></td>
-        </tr>
-        <tr>
-            <td style="padding: 10px; border: 1px solid black;">HTML</td>
-            <td style="padding: 10px; border: 1px solid black;">CSS</td>
-        </tr>
-        <tr>
-            <td style="padding: 10px; border: 1px solid black;">JavaScript</td>
-            <td style="padding: 10px; border: 1px solid black;">React</td>
-        </tr>
-    </table>
+      <div class="home-img">
+        <img src="home.png" alt="Home Image" />
+      </div>
+    </section>
 
-    <table style="width: 45%; border-collapse: collapse;">
-        <tr>
-            <td colspan="2" style="padding: 10px; border: 1px solid black;text-align:center;"><Strong><em>Backend Skills</em></Strong></td>
-        </tr>
-        <tr>
-            <td style="padding: 10px; border: 1px solid black;">MySQL,Mongodb</td>
-            <td style="padding: 10px; border: 1px solid black;">Python</td>
-        </tr>
-        <tr>
-            <td style="padding: 10px; border: 1px solid black;">Java</td>
-            <td style="padding: 10px; border: 1px solid black;">Node.js</td>
-        </tr>
-    </table>
-</section>
+    <!-- about section design -->
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="about.png" alt="Photo of tech icons" loading="lazy" />
+      </div>
 
+      <div class="about-content">
+        <h2 class="heading">About <span>Me</span></h2>
+        <h3><span>Tech</span> Enthusiast!</h3>
+        <p>
+          Hello! I'm <span>Himanshu</span> Menghani, an aspiring Information
+          Technology Engineer based in Mumbai. I am currently pursuing my degree
+          from VESIT, Chembur, with a passion for the ever-evolving world of
+          technology. My focus is on mastering diverse IT domains, including
+          coding, software development, and emerging tech trends.
+        </p>
+        <h3>Professional <span>Journey</span></h3>
+        <p>
+          I thrive in collaborative environments and enjoy working on projects
+          that push the boundaries of innovation. My
+          <span>GitHub</span> portfolio showcases my dedication to learning and
+          developing practical solutions. Here are some <span>highlights</span>:
+        </p>
+        <a href="https://www.linkedin.com/in/himanshumenghani524/" class="btn"
+          >Read More</a
+        >
+      </div>
+    </section>
 
-         <!--Audio-->
-        <section>
-            <h2 style="text-align: center;">Audio</h2>
-            <audio controls src="himanshu_audio.mp3"></audio>
-        </section>
+    <section class="skills" id="skills" data-aos="fade-up">
+      <h2 class="heading" data-aos="fade-up">
+        My <span class="jello">Skills</span>
+      </h2>
 
-
-         <!--Video-->
-        <section>
-            <h2 style="text-align: center;">Video</h2>
-            <video controls src="intro.mp4" style="height: 100%; width: 50%;"></video>
-        </section>
-
-         <!--Social Media-->
-        <section>
-            <h2 style="text-align: center;">Social Media</h2>
-            <div style="display: flex; justify-content: space-around;">
-        <a href="https://in.linkedin.com/in/himanshu-menghani-926394182" style="text-decoration: none; color: #0074D9; font-size: 20px;">LinkedIn</a>
-        <a href="https://github.com/524himanshu" style="text-decoration: none; color: #0074D9; font-size: 20px;">GitHub</a>
+      <div class="skills-row" data-aos="fade-up">
+        <!-- Technical Skills Column -->
+        <div class="skills-column" data-aos="fade-up">
+          <h3 class="title" data-aos="fade-up">
+            Technical <span>Skills</span>
+          </h3>
+          <div class="skills-box" data-aos="fade-up">
+            <div class="skills-content" data-aos="fade-up">
+              <div class="progress" data-aos="fade-up">
+                <h3>HTML <span>90%</span></h3>
+                <div class="bar"><span style="width: 90%"></span></div>
+              </div>
+              <div class="progress" data-aos="fade-up">
+                <h3>CSS <span>80%</span></h3>
+                <div class="bar"><span style="width: 80%"></span></div>
+              </div>
+              <div class="progress" data-aos="fade-up">
+                <h3>JavaScript <span>65%</span></h3>
+                <div class="bar"><span style="width: 65%"></span></div>
+              </div>
+              <div class="progress" data-aos="fade-up">
+                <h3>Python <span>75%</span></h3>
+                <div class="bar"><span style="width: 75%"></span></div>
+              </div>
+              <div class="progress" data-aos="fade-up">
+                <h3>SQL <span>70%</span></h3>
+                <div class="bar"><span style="width: 70%"></span></div>
+              </div>
+              <div class="progress" data-aos="fade-up">
+                <h3>React <span>60%</span></h3>
+                <div class="bar"><span style="width: 60%"></span></div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
 
-     <!--Footer-->
-    <footer style="text-align: center; padding: 10px; background-color:rgb(195, 188, 180);">
-        <p> &copy;  2023 Profile Page. All rights reserved.</p>
+        <!-- Professional Skills Column -->
+        <div class="skills-column" data-aos="fade-up">
+          <h3 class="title" data-aos="fade-up">
+            Professional <span>Skills</span>
+          </h3>
+          <div class="skills-box" data-aos="fade-up">
+            <div class="skills-content" data-aos="fade-up">
+              <div class="progress" data-aos="fade-up">
+                <h3>Web Development <span>75%</span></h3>
+                <div class="bar"><span style="width: 75%"></span></div>
+              </div>
+              <div class="progress" data-aos="fade-up">
+                <h3>Graphic Design <span>85%</span></h3>
+                <div class="bar"><span style="width: 85%"></span></div>
+              </div>
+              <div class="progress" data-aos="fade-up">
+                <h3>Data Structures &amp; Algorithms <span>70%</span></h3>
+                <div class="bar"><span style="width: 70%"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Card section -->
+    <section class="stats-card" id="stats-card">
+      <h2 class="heading">My <span>Stats </span>Card</h2>
+
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <!-- Daily Dev Card on the left -->
+        <div style="flex: 1; text-align: left">
+          <a href="https://app.daily.dev/himanshumenghani524"
+            ><img
+              src="https://api.daily.dev/devcards/v2/1hCXRTserlte40Z6hc8gH.png?type=default&r=rkx"
+              width="356"
+              alt="Himanshu Menghani's Dev Card"
+          /></a>
+        </div>
+
+        <!-- GitHub Stats Cards and Badges on the right -->
+        <div style="flex: 2; text-align: right">
+          <img
+            src="https://github-readme-stats.vercel.app/api?username=524himanshu&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=en&hide_border=false"
+            height="150"
+            alt="stats graph"
+          />
+          <img
+            src="https://github-readme-stats.vercel.app/api/top-langs?username=524himanshu&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=false"
+            height="150"
+            alt="languages graph"
+          />
+
+          <img
+            src="https://github-readme-streak-stats.herokuapp.com/?user=524himanshu&show_icons=true&locale=en&layout=compact&theme=radical&line_height=0"
+            alt="streak stats"
+          />
+
+          <!-- Badges -->
+          <div style="margin-top: 10px">
+            <img
+              src="https://badges.pufler.dev/visits/524himanshu/524himanshu"
+              alt="Visits Badge"
+            />
+            <img
+              src="https://badges.pufler.dev/repos/524himanshu"
+              alt="Repositories Badge"
+            />
+            <img
+              src="https://badges.pufler.dev/commits/monthly/524himanshu"
+              alt="Commits Badge"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- certificates section design -->
+    <section class="certificates" id="certificates">
+      <h2 class="heading">Our <span>Certificates</span></h2>
+      <div class="certificates-container">
+        <div class="nft">
+          <div class="main">
+            <img
+              class="tokenImage"
+              src="https://cdn.qwiklabs.com/Wd0M6LLiUyTjAcKQd7IChkWEF%2BuAndWsKPKmgAAd5ZY%3D"
+              alt="Web Development"
+            />
+            <h3>Develop GenAI Apps with Gemini and Streamlit</h3>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+              eligendi ratione dolorem culpa velit et cupiditate impedit non
+              facilis nisi aperiam vitae adipisci fuga iusto, dolorum fugiat sed
+              autem, error quas?
+            </p>
+            <hr />
+            <div class="creator">
+              <div class="wrapper">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA4CAMAAABuU5ChAAAA+VBMVEX////pQjU0qFNChfT6uwU0f/O4zvs6gfSJr/j6twDoOisjePPoNSXpPjDrWU/oLRr+9vZ7pff/vAAUoUAkpEn0ran619b82pT7wgD+68j947H/+e7//PafvPm/0vuBw5Df7+P63tz3xcPxl5HnJQ7qUEXxj4n4z83zoJzqSz/vgXrucWrsY1r1tbHrSBPoOjbvcSr0kx74rRH80XntZC3xhSPmGRr86+r4sk/936EJcfPS3/yowvnbwVKjsTjx9f5urEjkuBu9tC+ErkJyvoRRpj2az6hWs23j6/0emX2z2btAiuI8k8AyqkE5nZU1pGxCiOxVmtHJ5M+PSt3WAAACGElEQVRIieWSa3fSQBCGk20CJRcW2AWKxgJtqCmieNdatV5SUtFq5f//GJeE7CXJJOT4TZ+PO+c58+7MaNr/SWd60mecTDs1pMFp28dODPZnZw/369TXseXqHNfCblDdte84krTDwUFFwnMnJyXm+bSsmZ/vlcb1+6A2x5C1xYeyPgIyJlhtYDjzjOYyZA3oFighLYxni8UMY6dCG/jy9KzTQfI8DXSnTNN0kcl1lNE9dlxYC8TnnEVmAJ02qHlPllyb58vgmQ2Np0tYgzGMo2ex6IKRihi1mPhcZyYuO8McL4yYl0vrrI6mJZpx9Or1mzqa10rFt8p7o5ArXh+lXutC8d6ZBdiXvH6PeyPFsw8KMBu8fsG9+3t473l9yD1vD+/BX3v1cgqv3lzE/8A9NCUK5sn33vugeN1DQTcVTbG/9M56H+lEAzg2d54t7iW5657xCdEx5PF+B9Lj9oO9z4hBgIZX6YyaXfmZaV9QQkU781h+Hra+7jQaFv6Or8RW3r1rhErES641D9XKigox8jJaQxyAfZOpIQm6kiuT6BvfujqVuEpkkY43u+d1RBBF35v55aVJidKSEBRFiJAk/+0PM3NjgjFFMLc/WVYzlzImLBPprzvzrlBjHUmZSH8DmqatS0QSZtcjTxUBWSlZw1bckhaYlISTcm1rIqKolJJxtRWnXUVscTFsjWFFwoy7WTM2+zX69/gDaLcy7SET9nsAAAAASUVORK5CYII="
+                  alt="Creator"
+                />
+              </div>
+              <p>
+                <ins>Issued in </ins><span>May 2024</span> by
+                <span>Google</span>
+              </p>
+            </div>
+            <a
+              href="https://www.cloudskillsboost.google/public_profiles/a9c58b9f-f2c2-41d6-9444-6310d2e25223/badges/9205669?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
+              class="btn"
+              >Read More</a
+            >
+          </div>
+        </div>
+        <div class="nft">
+          <div class="main">
+            <img
+              class="tokenImage"
+              src="https://cdn.qwiklabs.com/KJbv0GOIxc4Ze8p7LH1Ke4TeOMBGPqAus29iGiFw5po%3D"
+              alt="Graphic Design"
+            />
+            <h3>Introduction to Generative AI</h3>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+              libero similique animi, unde, harum ipsum praesentium blanditiis
+              necessitatibus reprehenderit non porro vitae error architecto, vel
+              nesciunt soluta suscipit aspernatur modi?
+            </p>
+            <hr />
+            <div class="creator">
+              <div class="wrapper">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA4CAMAAABuU5ChAAAA+VBMVEX////pQjU0qFNChfT6uwU0f/O4zvs6gfSJr/j6twDoOisjePPoNSXpPjDrWU/oLRr+9vZ7pff/vAAUoUAkpEn0ran619b82pT7wgD+68j947H/+e7//PafvPm/0vuBw5Df7+P63tz3xcPxl5HnJQ7qUEXxj4n4z83zoJzqSz/vgXrucWrsY1r1tbHrSBPoOjbvcSr0kx74rRH80XntZC3xhSPmGRr86+r4sk/936EJcfPS3/yowvnbwVKjsTjx9f5urEjkuBu9tC+ErkJyvoRRpj2az6hWs23j6/0emX2z2btAiuI8k8AyqkE5nZU1pGxCiOxVmtHJ5M+PSt3WAAACGElEQVRIieWSa3fSQBCGk20CJRcW2AWKxgJtqCmieNdatV5SUtFq5f//GJeE7CXJJOT4TZ+PO+c58+7MaNr/SWd60mecTDs1pMFp28dODPZnZw/369TXseXqHNfCblDdte84krTDwUFFwnMnJyXm+bSsmZ/vlcb1+6A2x5C1xYeyPgIyJlhtYDjzjOYyZA3oFighLYxni8UMY6dCG/jy9KzTQfI8DXSnTNN0kcl1lNE9dlxYC8TnnEVmAJ02qHlPllyb58vgmQ2Np0tYgzGMo2ex6IKRihi1mPhcZyYuO8McL4yYl0vrrI6mJZpx9Or1mzqa10rFt8p7o5ArXh+lXutC8d6ZBdiXvH6PeyPFsw8KMBu8fsG9+3t473l9yD1vD+/BX3v1cgqv3lzE/8A9NCUK5sn33vugeN1DQTcVTbG/9M56H+lEAzg2d54t7iW5657xCdEx5PF+B9Lj9oO9z4hBgIZX6YyaXfmZaV9QQkU781h+Hra+7jQaFv6Or8RW3r1rhErES641D9XKigox8jJaQxyAfZOpIQm6kiuT6BvfujqVuEpkkY43u+d1RBBF35v55aVJidKSEBRFiJAk/+0PM3NjgjFFMLc/WVYzlzImLBPprzvzrlBjHUmZSH8DmqatS0QSZtcjTxUBWSlZw1bckhaYlISTcm1rIqKolJJxtRWnXUVscTFsjWFFwoy7WTM2+zX69/gDaLcy7SET9nsAAAAASUVORK5CYII="
+                  loading="lazy"
+                  alt="Creator"
+                />
+              </div>
+              <p>
+                <ins>Issued in </ins><span>May 2024</span> by
+                <span>Google</span>
+              </p>
+            </div>
+            <a
+              href="https://www.cloudskillsboost.google/public_profiles/a9c58b9f-f2c2-41d6-9444-6310d2e25223/badges/9209925?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
+              class="btn"
+              >Read More</a
+            >
+          </div>
+        </div>
+        <div class="nft">
+          <div class="main">
+            <img
+              class="tokenImage"
+              src="https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              loading="lazy"
+              alt="Digital Marketing"
+            />
+            <h3>Digital Marketing</h3>
+            <p class="description">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint
+              mollitia, minima blanditiis explicabo aliquid minus, beatae eos ea
+              eum voluptatum tempora nisi id voluptas iste aut sapiente
+              accusamus nemo ipsam.
+            </p>
+            <hr />
+            <div class="creator">
+              <div class="wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
+                  loading="lazy"
+                  alt="Creator"
+                />
+              </div>
+              <p><ins>Creation of</ins> Alice <span>Brown</span></p>
+            </div>
+            <a href="#" class="btn">Read More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- portfolio section design -->
+    <section class="portfolio" id="portfolio">
+      <h2 class="heading">Latest <span>Project</span></h2>
+
+      <div class="portfolio-container">
+        <div class="portfolio-box">
+          <img src="portfolio1.jpg" alt="Portfolio Project 1" />
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="https://project-link.com" target="_blank" rel="noopener"
+              ><i class="bx bx-link-external"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="portfolio2.jpg" alt="Portfolio Project 2" />
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="portfolio3.jpg" alt="Portfolio Project 3" />
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="portfolio4.jpg" alt="Portfolio Project 4" />
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="portfolio5.jpg" alt="Portfolio Project 5" />
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="portfolio6.jpg" alt="Portfolio Project 6" />
+          <div class="portfolio-layer">
+            <h4>Web Design</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="heading">Contact <span>Me!</span></h2>
+
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <!-- Rotating Instagram Profile Card on the left -->
+        <div class="profile-card-container">
+          <div class="profile-card">
+            <div class="front">
+              <img src="image.png" alt="Instagram Profile Image" />
+            </div>
+            <div class="back">
+              <p>Follow me on Instagram:</p>
+              <a
+                href="https://www.instagram.com/himanshumenghani524/profilecard/?igsh=aGlpMmRsNTg5Mmdy"
+                target="_blank"
+                class="btn"
+                >Visit Profile</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form on the right -->
+        <div style="flex: 1; text-align: right">
+          <form action="">
+            <div class="input-box">
+              <input type="text" placeholder="Full Name" />
+              <input type="email" placeholder="Email Address" />
+            </div>
+            <div class="input-box">
+              <input type="number" placeholder="Mobile Number" />
+              <input type="text" placeholder="Email Subject" />
+            </div>
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Your Message"
+            ></textarea>
+            <input type="submit" value="Send Message" class="btn" />
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer design -->
+    <footer class="footer">
+      <div class="footer-text">
+        <p>
+          Copyright &copy;
+          <a href="https://www.linkedin.com/in/himanshumenghani524/"
+            ><span>Himanshu Menghani</span></a
+          >
+          | All Rights Reserved
+        </p>
+      </div>
+
+      <div class="footer-iconTop">
+        <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+      </div>
     </footer>
 
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
 
-</body>
+    <!-- typed js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!-- custom js -->
+    <script src="script.js"></script>
+  </body>
 </html>
