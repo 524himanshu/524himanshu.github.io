@@ -21,7 +21,7 @@ This is a responsive portfolio website showcasing my projects, skills, and conta
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/524himanshu/Responsive-Portfolio.git
+   git clone https://github.com/524himanshu/524himanshu.github.io.git
    ```
 2. Navigate to the project directory:
    ```bash
