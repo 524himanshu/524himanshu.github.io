@@ -99,7 +99,7 @@ section {
 .home-img img {
   width: 35vw;
   animation: floatImage 4s ease-in-out infinite;
-  /box-shadow: 0 0 20px 10px rgba(14, 239, 255, 0.5); /* Add glow effect */
+  /* box-shadow: 0 0 20px 10px rgba(14, 239, 255, 0.5); Add glow effect */
 }
 
 .logo {
