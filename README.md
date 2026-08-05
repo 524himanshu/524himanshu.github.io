@@ -35,5 +35,5 @@ This portfolio incorporates production-grade defensive security measures:
 
 * **Portfolio**: [himanshu-menghani.vercel.app](https://himanshu-menghani.vercel.app/)
 * **GitHub**: [github.com/524himanshu](https://github.com/524himanshu)
-* **LinkedIn**: [linkedin.com/in/himanshu-menghani-926394182](https://in.linkedin.com/in/himanshu-menghani-926394182)
+* **LinkedIn**: [linkedin.com/in/himanshu-menghani-926394182](https://www.linkedin.com/in/himanshumenghani524/)
 * **Email**: [himanshumenghani524@gmail.com](mailto:himanshumenghani524@gmail.com)
