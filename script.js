@@ -382,7 +382,16 @@ aiChatInputArea.addEventListener('submit', (e) => {
 function appendMessage(sender, text) {
   const msgDiv = document.createElement('div');
   msgDiv.className = `chat-message ${sender}`;
-  msgDiv.innerHTML = `<div class="message-content">${text}</div>`;
+  const contentDiv = document.createElement('div');
+  contentDiv.className = 'message-content';
+
+  if (sender === 'user') {
+    contentDiv.textContent = text;
+  } else {
+    contentDiv.innerHTML = text;
+  }
+
+  msgDiv.appendChild(contentDiv);
   aiChatBody.appendChild(msgDiv);
   aiChatBody.scrollTop = aiChatBody.scrollHeight;
   return msgDiv;
