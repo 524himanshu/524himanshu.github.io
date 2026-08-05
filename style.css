@@ -1556,12 +1556,12 @@ body.dark-theme #cursor-glow.hovering {
   height: 4.8rem;
   padding: 0 2.2rem;
   border-radius: 9999px;
-  background: rgba(91, 107, 249, 0.75) !important;
-  backdrop-filter: blur(16px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  background: rgba(15, 23, 42, 0.55) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
   cursor: pointer;
-  box-shadow: 0 10px 30px rgba(91, 107, 249, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -1582,8 +1582,9 @@ body.dark-theme #cursor-glow.hovering {
 
 .ai-chat-toggle:hover {
   transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 15px 35px rgba(91, 107, 249, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
-  background: rgba(91, 107, 249, 0.85) !important;
+  background: rgba(91, 107, 249, 0.55) !important;
+  border-color: rgba(91, 107, 249, 0.7) !important;
+  box-shadow: 0 15px 35px rgba(91, 107, 249, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
 }
 
 .agent-sub-title {
