@@ -520,7 +520,7 @@ function getLocalAIResponse(query) {
   }
 
   if (availabilityKeywords.some(k => q.includes(k))) {
-    return "Yes! Himanshu is actively seeking opportunities in Full-Stack Development, AI Engineering, GenAI, Agentic AI, and Software Engineering roles. Open to Remote and relocation to Bengaluru, Hyderabad, SF, NYC, and global roles.";
+    return "Yes! Himanshu is actively available for Full-Stack, AI Engineering, and Software Engineering roles.<br><br>• <strong>Location & Work Model</strong>: Based in Mumbai, India. Open to Remote roles globally and on-site relocation (Bengaluru, Hyderabad, San Francisco, New York City, Global).<br>• <strong>Notice Period / Start Date</strong>: Immediately available.<br>• <strong>Contact Directly</strong>: Phone <strong>+91 7769949282</strong> or Email <a href='mailto:himanshumenghani524@gmail.com' style='color:#38bdf8;'>himanshumenghani524@gmail.com</a>.";
   }
 
   if (locationKeywords.some(k => q.includes(k))) {
