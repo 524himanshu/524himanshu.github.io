@@ -972,11 +972,11 @@
     </footer>
 
 
-    <!-- Himanshu AI Chat Widget -->
+    <!-- Himanshu AI Chat Widget (Agent Playground) -->
     <div id="ai-chat-widget" class="ai-chat-widget">
       <button id="ai-chat-toggle" class="ai-chat-toggle" aria-label="Toggle AI Assistant">
-        <i class="bx bx-bot"></i>
-        <span class="ai-badge-pulse"></span>
+        <i class="bx bx-message-rounded-detail"></i>
+        <span>Ask Himanshu AI</span>
       </button>
 
       <div id="ai-chat-window" class="ai-chat-window">
@@ -984,35 +984,36 @@
           <div class="ai-chat-header-info">
             <div class="ai-avatar-wrap">
               <i class="bx bx-bot"></i>
-              <span class="online-indicator"></span>
             </div>
             <div>
-              <h3>Himanshu AI</h3>
-              <p>Assistant Agent</p>
+              <h3>Ask Himanshu AI</h3>
+              <p class="agent-sub-title">AGENT PLAYGROUND</p>
             </div>
           </div>
-          <button id="ai-chat-close" class="ai-chat-close" aria-label="Close Chat">
-            <i class="bx bx-x"></i>
-          </button>
+          <div class="header-right-actions">
+            <span class="sanitized-badge"><i class="bx bx-shield-quarter"></i> sanitized</span>
+            <button id="ai-chat-close" class="ai-chat-close" aria-label="Close Chat">
+              <i class="bx bx-x"></i>
+            </button>
+          </div>
         </div>
 
         <div id="ai-chat-body" class="ai-chat-body">
-          <div class="chat-message bot">
-            <div class="message-content">
-              Hi! I'm Himanshu's AI assistant. Ask me anything about his skills, experience, projects, or how to contact him!
-            </div>
+          <div class="chat-welcome-text">
+            Ask me anything about Himanshu's projects, engineering stack, security architecture or availability.
           </div>
           <div class="chat-chips">
-            <button class="chat-chip" data-question="What are his featured projects?">Projects</button>
-            <button class="chat-chip" data-question="What is his technical stack?">Tech Stack</button>
-            <button class="chat-chip" data-question="Is he looking for opportunities?">Availability</button>
+            <button class="chat-chip" data-question="Tell me about CodeMate OS">Tell me about CodeMate OS</button>
+            <button class="chat-chip" data-question="What is the DrishtiAI Hackathon project?">DrishtiAI Hackathon Project</button>
+            <button class="chat-chip" data-question="What is his technical stack?">Technical Stack</button>
+            <button class="chat-chip" data-question="How can I contact Himanshu?">How to Contact</button>
           </div>
         </div>
 
         <form id="ai-chat-input-area" class="ai-chat-input-area">
-          <input type="text" id="ai-chat-input" placeholder="Ask about Himanshu..." required autocomplete="off" />
+          <input type="text" id="ai-chat-input" placeholder="Ask about projects, stack, availability..." required autocomplete="off" />
           <button type="submit" id="ai-chat-send" aria-label="Send Message">
-            <i class="bx bx-paper-plane"></i>
+            <i class="bx bx-send"></i>
           </button>
         </form>
       </div>
