@@ -430,8 +430,10 @@ function showTypingIndicator() {
   const typingDiv = document.createElement('div');
   typingDiv.className = 'chat-message bot typing-msg';
   typingDiv.innerHTML = `
-    <div class="message-content">
-      <span class="thinking-text">T H I N K I N G . . .</span>
+    <div class="message-content typing-indicator">
+      <span class="typing-dot"></span>
+      <span class="typing-dot"></span>
+      <span class="typing-dot"></span>
     </div>
   `;
   aiChatBody.appendChild(typingDiv);
