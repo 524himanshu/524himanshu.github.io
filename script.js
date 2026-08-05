@@ -379,6 +379,35 @@ aiChatInputArea.addEventListener('submit', (e) => {
   }
 });
 
+function sanitizeHTML(str) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(str, 'text/html');
+  const allowedTags = ['B', 'I', 'STRONG', 'EM', 'BR', 'P', 'SPAN', 'A', 'UL', 'OL', 'LI', 'CODE', 'PRE'];
+  
+  function clean(node) {
+    for (let i = node.childNodes.length - 1; i >= 0; i--) {
+      const child = node.childNodes[i];
+      if (child.nodeType === 1) { // Element node
+        if (!allowedTags.includes(child.tagName)) {
+          // Remove unsafe tag (e.g. IFRAME, SCRIPT, IMG, OBJECT)
+          node.removeChild(child);
+        } else {
+          // Strip inline event handlers (e.g. onerror, onload, onclick)
+          Array.from(child.attributes).forEach(attr => {
+            if (attr.name.startsWith('on') || attr.name.toLowerCase() === 'href' && attr.value.trim().toLowerCase().startsWith('javascript:')) {
+              child.removeAttribute(attr.name);
+            }
+          });
+          clean(child);
+        }
+      }
+    }
+  }
+  
+  clean(doc.body);
+  return doc.body.innerHTML;
+}
+
 function appendMessage(sender, text) {
   const msgDiv = document.createElement('div');
   msgDiv.className = `chat-message ${sender}`;
@@ -388,7 +417,7 @@ function appendMessage(sender, text) {
   if (sender === 'user') {
     contentDiv.textContent = text;
   } else {
-    contentDiv.innerHTML = text;
+    contentDiv.innerHTML = sanitizeHTML(text);
   }
 
   msgDiv.appendChild(contentDiv);
