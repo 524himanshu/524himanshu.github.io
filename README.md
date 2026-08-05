@@ -1,31 +1,39 @@
-# Himanshu-Menghani-Portfolio
+# Himanshu Menghani — Full-Stack & AI Engineer Portfolio
 
-Live: https://himanshu-menghani.vercel.app
+🌐 **Live Website**: [https://himanshu-menghani.vercel.app/](https://himanshu-menghani.vercel.app/)
 
-## Description
+The source code for my personal portfolio website, engineered to showcase AI agent systems, high-throughput RAG backends, developer tools, and full-stack web applications.
 
-Source code for my personal portfolio, showcasing full-stack and AI projects with live deployments, built using Next.js, React, Flask, and MongoDB.
+---
 
-## Features
+## 🚀 Featured Engineering Projects
 
-- Responsive design
-- Project showcase
-- Skills section
-- Contact form
+* **CodeMate OS** ([Live App](https://codemate-os.vercel.app/) | [Repository](https://github.com/524himanshu/codemate)): Active-learning IDE studio featuring real-time AST Python execution tracing, WebSockets (<50ms latency), subprocess compiler sandboxes, and an Autonomous Self-Healing Debugger Agent.
+* **DrishtiAI** ([Repository](https://github.com/524himanshu/drishti-ai)): Real-time pharmacovigilance adverse event detection engine using scispaCy & RAG (**Shortlisted for Prototype Stage at AI for Bharat 2026**).
+* **CF AI Career Coach**: Serverless AI mentorship assistant deployed on Cloudflare Workers, running Llama 3.3 inference at the edge with zero cold starts.
+* **RecruitIQ**: Intelligent candidate ranking engine evaluating resume vector embeddings and cosine similarity.
 
-## Technologies Used
+---
 
-- HTML
-- CSS
-- JavaScript
+## 🛡️ Security Architecture
 
-## Usage
+This portfolio incorporates production-grade defensive security measures:
+* **DOMParser XSS Shield**: User chat inputs are rendered using `textContent` and AI bot responses are sanitized via client-side `DOMParser` filtering to neutralize script injection and inline event handlers.
+* **Defensive HTTP Security Headers**: Configured via `vercel.json` (`Content-Security-Policy`, `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`).
 
-Feel free to explore the portfolio to learn more about my work and skills. You can also use the contact form to get in touch with me.
+---
 
-## Contact
+## 🛠️ Tech Stack
 
-- Email: [himanshumenghani524@gmail.com](mailto:himanshumenghani524@gmail.com)
-- LinkedIn: [himanshumenghani524](https://www.linkedin.com/in/himanshumenghani524/)
-- GitHub: [524himanshu](https://github.com/524himanshu)
-- Website: [https://524himanshu.github.io](https://himanshu-menghani.vercel.app/)
+* **Frontend**: HTML5, Modern CSS3 (CSS Variables, Flexbox/Grid, Glassmorphism), JavaScript (ES6+), Boxicons.
+* **Serverless Backend**: Cloudflare Workers, Cloudflare Workers AI (Llama 3.3), Durable Objects.
+* **Deployment & Hosting**: Vercel Edge Network.
+
+---
+
+## 📬 Contact & Links
+
+* **Portfolio**: [himanshu-menghani.vercel.app](https://himanshu-menghani.vercel.app/)
+* **GitHub**: [github.com/524himanshu](https://github.com/524himanshu)
+* **LinkedIn**: [linkedin.com/in/himanshu-menghani-926394182](https://in.linkedin.com/in/himanshu-menghani-926394182)
+* **Email**: [himanshumenghani524@gmail.com](mailto:himanshumenghani524@gmail.com)
