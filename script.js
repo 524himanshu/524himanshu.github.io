@@ -479,11 +479,19 @@ async function handleUserSend(messageText) {
 
 function getLocalAIResponse(query) {
   const q = query.toLowerCase();
-  
+
+  if (q.includes('codemate')) {
+    return "<strong>CodeMate OS</strong> is an active-learning IDE studio & Career OS for self-taught developers.<br><br>• <strong>Autonomous Self-Healing Repair Agent</strong>: Intercepts stack traces and compiler errors, generates unified diff patches, and re-verifies execution in a sandbox.<br>• <strong>AST Execution Tracer</strong>: Step-by-step Python frame inspection (`sys.settrace`).<br>• <strong>WebSockets</strong>: Real-time candidate typing synchronization (<50ms latency).<br><br><a href='https://codemate-os.vercel.app/' target='_blank' rel='noopener' style='color:#38bdf8; text-decoration:underline;'>Live App: codemate-os.vercel.app ↗</a><br><a href='https://github.com/524himanshu/codemate' target='_blank' rel='noopener' style='color:#38bdf8; text-decoration:underline;'>GitHub: github.com/524himanshu/codemate ↗</a>";
+  }
+
+  if (q.includes('drishti')) {
+    return "<strong>DrishtiAI</strong> is a real-time pharmacovigilance adverse event detection NLP engine.<br><br>🏆 <strong>Shortlisted for Prototype Stage at AI for Bharat 2026</strong> (National AI Innovation Hackathon).<br><br>• <strong>Tech Stack</strong>: Python, FastAPI, scispaCy NER, dual-mode NLP pipeline, Microsoft Presidio PII redaction, Gemini 1.5 Flash.<br><br><a href='https://github.com/524himanshu/drishti-ai' target='_blank' rel='noopener' style='color:#38bdf8; text-decoration:underline;'>GitHub: github.com/524himanshu/drishti-ai ↗</a>";
+  }
+
   // Keyword definitions
-  const projectKeywords = ['project', 'build', 'drishti', 'recruitiq', 'career coach', 'playto', 'payout'];
+  const projectKeywords = ['project', 'build', 'recruitiq', 'career coach', 'playto', 'payout', 'offerforge'];
   const skillKeywords = ['skill', 'stack', 'tech', 'language', 'database'];
-  const contactKeywords = ['contact', 'reach', 'email', 'linkedin', 'phone', 'number', 'mobile', 'call'];
+  const contactKeywords = ['contact', 'reach', 'email', 'linkedin', 'phone', 'number', 'mobile', 'call', 'how to contact'];
   const experienceKeywords = ['experience', 'work', 'intern', 'octanet'];
   const educationKeywords = ['education', 'college', 'university', 'mumbai', 'degree', 'study', 'studies', 'hsc'];
   const achievementKeywords = ['achievement', 'award', 'hackathon', 'recognition', 'shortlist', 'trophy', 'hack', 'invictus', 'redrob'];
@@ -508,45 +516,45 @@ function getLocalAIResponse(query) {
   }
 
   if (resumeKeywords.some(k => q.includes(k))) {
-    return "You can download Himanshu's latest resume directly using the button below or request a copy via email at <a href='mailto:himanshumenghani524@gmail.com'>himanshumenghani524@gmail.com</a>.<br><br><a href='./Himanshu Professional Resume updated.pdf' download='Himanshu Menghani Resume.pdf' class='btn' style='display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.8rem 1.6rem; font-size: 1.2rem; margin-top: 0.5rem; text-decoration: none; border-radius: 2rem;'><i class='bx bx-download'></i> Download CV</a>";
+    return "You can download Himanshu's latest resume directly using the button below or request a copy via email at <a href='mailto:himanshumenghani524@gmail.com' style='color:#38bdf8;'>himanshumenghani524@gmail.com</a>.<br><br><a href='./Himanshu Professional Resume updated.pdf' download='Himanshu Menghani Resume.pdf' class='btn' style='display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.8rem 1.6rem; font-size: 1.2rem; margin-top: 0.5rem; text-decoration: none; border-radius: 2rem;'><i class='bx bx-download'></i> Download CV</a>";
   }
 
   if (availabilityKeywords.some(k => q.includes(k))) {
-    return "Yes! Himanshu is actively seeking opportunities in Full-Stack Development, AI Engineering, GenAI, Agentic AI, and Software Engineering roles. Feel free to connect via LinkedIn or email.";
+    return "Yes! Himanshu is actively seeking opportunities in Full-Stack Development, AI Engineering, GenAI, Agentic AI, and Software Engineering roles. Open to Remote and relocation to Bengaluru, Hyderabad, SF, NYC, and global roles.";
   }
 
   if (locationKeywords.some(k => q.includes(k))) {
-    return "Himanshu is based in Mumbai, India and is open to relocation for the right opportunity.";
+    return "Himanshu is based in Mumbai, India and is fully open to relocation (Bengaluru, Hyderabad, SF, NYC, Global) or remote roles.";
   }
 
   if (aiKeywords.some(k => q.includes(k))) {
-    return "Himanshu has experience building applications with Gemini, Claude, Llama 3.3, and Grok. His work includes RAG pipelines, semantic search, prompt engineering, AI-powered ranking systems, and agentic workflows across projects like CodeMate, RecruitIQ, and CF AI Career Coach.";
+    return "Himanshu has experience building applications with Gemini, Claude, Llama 3.3, and Grok. His work includes RAG pipelines, semantic search, prompt engineering, AI-powered ranking systems, and agentic workflows across projects like CodeMate OS, DrishtiAI, and OfferForge.";
   }
 
   if (projectKeywords.some(k => q.includes(k))) {
-    return "Himanshu has built several notable projects:<br><br>• <strong>CodeMate</strong>: AI-powered Career Operating System and active engineering learning simulator.<br>• <strong>DrishtiAI</strong>: Real-time pharmacovigilance adverse event detection (Twitter/Reddit streams) shortlisted for AI for Bharat 2026.<br>• <strong>RecruitIQ</strong>: Intelligent candidate ranking engine evaluating 100k profiles.<br>• <strong>CF AI Career Coach</strong>: Serverless Llama 3.3 chatbot on Cloudflare Workers.<br>• <strong>Playto Payout Engine</strong>: Async payout queue with Django & Celery.";
+    return "Himanshu's flagship projects:<br><br>• <strong>CodeMate OS</strong>: AI-powered Career Operating System and active engineering learning simulator (<a href='https://codemate-os.vercel.app/' target='_blank' rel='noopener' style='color:#38bdf8; text-decoration:underline;'>Demo ↗</a>).<br>• <strong>DrishtiAI</strong>: Real-time pharmacovigilance adverse event detection (AI for Bharat 2026 prototype shortlist).<br>• <strong>OfferForge</strong>: AI document processing with Presidio PII redaction shield (<a href='https://offerforge.vercel.app/' target='_blank' rel='noopener' style='color:#38bdf8; text-decoration:underline;'>Demo ↗</a>).<br>• <strong>RecruitIQ</strong>: Intelligent candidate ranking engine evaluating 100k profiles.";
   }
-  
+
   if (skillKeywords.some(k => q.includes(k))) {
-    return "Himanshu's tech stack includes:<br><br>• <strong>Languages</strong>: JavaScript, Python, SQL<br>• <strong>Backend</strong>: FastAPI, Django & DRF, Flask, Celery, Redis<br>• <strong>AI/ML</strong>: LLM integrations (Gemini, Llama, Claude, Grok), Agentic AI, RAG pipelines, Scikit-learn<br>• <strong>Frontend</strong>: Next.js, React.js, Tailwind CSS<br>• <strong>Databases & Tools</strong>: PostgreSQL, MongoDB, Docker, Cloudflare Workers";
+    return "Himanshu's tech stack includes:<br><br>• <strong>Languages</strong>: JavaScript, TypeScript, Python, C++, Java, SQL<br>• <strong>Backend</strong>: FastAPI, Django & DRF, Flask, Node.js, Celery, Redis<br>• <strong>AI/ML</strong>: LLM integrations (Gemini, Llama, Claude), Agentic AI, RAG pipelines, scispaCy, Presidio PII<br>• <strong>Frontend</strong>: Next.js, React.js, Tailwind CSS<br>• <strong>Databases & Tools</strong>: PostgreSQL, Supabase, Docker, Cloudflare Workers, Vercel";
   }
-  
+
   if (contactKeywords.some(k => q.includes(k))) {
-    return "You can reach Himanshu in several ways:<br><br>• <strong>Email</strong>: <a href='mailto:himanshumenghani524@gmail.com'>himanshumenghani524@gmail.com</a><br>• <strong>Phone</strong>: <a href='tel:+917769949282'>+91 77699 49282</a><br>• <strong>LinkedIn</strong>: <a href='https://www.linkedin.com/in/himanshumenghani524/' target='_blank'>himanshumenghani524</a><br>• Or fill out the <strong>Contact Form</strong> directly on this page!";
+    return "You can contact Himanshu Menghani by phone at <strong>+91 7769949282</strong> or by email at <a href='mailto:himanshumenghani524@gmail.com' style='color:#38bdf8;'>himanshumenghani524@gmail.com</a>.<br><br>His portfolio is available at <a href='https://himanshu-menghani.vercel.app/' target='_blank' rel='noopener' style='color:#38bdf8; text-decoration:underline;'>himanshu-menghani.vercel.app ↗</a>, GitHub at <a href='https://github.com/524himanshu' target='_blank' rel='noopener' style='color:#38bdf8; text-decoration:underline;'>github.com/524himanshu ↗</a>, and LinkedIn at <a href='https://www.linkedin.com/in/himanshumenghani524/' target='_blank' rel='noopener' style='color:#38bdf8; text-decoration:underline;'>linkedin.com/in/himanshumenghani524 ↗</a>.";
   }
-  
+
   if (experienceKeywords.some(k => q.includes(k))) {
-    return "Himanshu was a <strong>Web Development Intern</strong> at OctaNet Services Pvt Ltd (Sept 2023 – Oct 2023). He developed 3+ responsive web applications (including a prioritize-based task management system) and resolved rendering and styling bugs.";
+    return "Himanshu was a <strong>Web Development Intern</strong> at OctaNet Services Pvt Ltd (Sept 2023 – Oct 2023). He developed 3+ responsive web applications and resolved rendering and performance bugs.";
   }
-  
+
   if (educationKeywords.some(k => q.includes(k))) {
     return "Himanshu graduated with a <strong>Bachelor of Engineering in Information Technology</strong> from Mumbai University (2021 - 2024). He completed his HSC Science board with an 80% score in 2021.";
   }
-  
+
   if (greetingKeywords.some(k => q.includes(k))) {
-    return "Hello! I'm Himanshu's AI assistant. Ask me anything about his projects, experience, skills, or achievements!";
+    return "Hello! I'm Himanshu's AI assistant. Ask me anything about his projects, experience, skills, or availability!";
   }
-  
+
   return null;
 }
 
