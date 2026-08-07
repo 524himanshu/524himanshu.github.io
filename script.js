@@ -2057,3 +2057,69 @@ function initSystemStatusDashboard() {
   // Start log stream after initial boot sequence finishes
   setTimeout(streamLog, 3000);
 }
+
+// ===== Hero Terminal Tabs & Booking Modal Handlers =====
+document.addEventListener('DOMContentLoaded', () => {
+  const heroTabs = document.querySelectorAll('.hero-term-tab');
+  heroTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      heroTabs.forEach(t => {
+        t.classList.remove('active');
+        t.style.borderBottomColor = 'transparent';
+        t.style.color = 'rgba(255,255,255,0.6)';
+        t.style.fontWeight = 'normal';
+      });
+      tab.classList.add('active');
+      tab.style.borderBottomColor = 'var(--main-color)';
+      tab.style.color = 'var(--main-color)';
+      tab.style.fontWeight = '600';
+
+      const targetTab = tab.dataset.tab;
+      ['repair', 'ast', 'metrics'].forEach(t => {
+        const el = document.getElementById(`tab-content-${t}`);
+        if (el) el.style.display = t === targetTab ? 'block' : 'none';
+      });
+    });
+  });
+
+  const btnDiag = document.getElementById('btn-run-hero-diag');
+  if (btnDiag) {
+    btnDiag.addEventListener('click', () => {
+      const activeTab = document.querySelector('.hero-term-tab.active')?.dataset.tab || 'repair';
+      const container = document.getElementById(`tab-content-${activeTab}`);
+      if (!container) return;
+
+      const time = (Math.random() * 0.4 + 0.1).toFixed(2);
+      const logLine = document.createElement('div');
+      logLine.style.color = '#00eeff';
+      logLine.style.fontWeight = '600';
+      logLine.textContent = `[${time}s] Manual Diagnostic Test: System Health 100% OK (Latency: <35ms)`;
+      container.appendChild(logLine);
+      container.scrollTop = container.scrollHeight;
+    });
+  }
+
+  // ===== Booking Modal Handlers =====
+  const modal = document.getElementById('booking-modal');
+  const btnOpen = document.getElementById('btn-open-booking');
+  const btnClose = document.getElementById('btn-close-booking');
+
+  if (btnOpen && modal) {
+    btnOpen.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.style.display = 'flex';
+    });
+  }
+
+  if (btnClose && modal) {
+    btnClose.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  }
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+  }
+});
