@@ -1430,6 +1430,10 @@ span {
   transition: 0.3s ease;
 }
 
+.tech-icon[title="Django"] img {
+  filter: brightness(0) invert(1) !important;
+}
+
 .tech-icon span {
   font-size: 1.2rem;
   font-family: monospace;
