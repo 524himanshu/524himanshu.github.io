@@ -84,7 +84,7 @@
         </div>
         <div style="display: flex; gap: 1.2rem; align-items: center; margin-top: 2rem; flex-wrap: wrap;">
           <a href="Himanshu Professional Resume updated.pdf" download="Himanshu Menghani Resume.pdf" class="btn download-cv">Download CV</a>
-          <a href="https://calendly.com/himanshumenghani524/30min" target="_blank" rel="noopener" class="btn-sec btn-book-call" style="display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; border-radius: 4rem; padding: 1.2rem 2.4rem; font-size: 1.5rem; font-weight: 600;"><i class="bx bx-calendar-event"></i> Book 15-Min Call</a>
+          <button class="btn-sec btn-book-call" id="btn-open-booking" style="display: inline-flex; align-items: center; gap: 0.6rem; cursor: pointer; border-radius: 4rem; padding: 1.2rem 2.4rem; font-size: 1.5rem; font-weight: 600;"><i class="bx bx-calendar-event"></i> Book 15-Min Call</button>
           <a href="https://github.com/524himanshu" target="_blank" rel="noopener" class="btn-sec">Explore GitHub</a>
         </div>
       </div>
@@ -575,6 +575,52 @@
           <div class="ops-status-pulse">
             <span class="pulse-dot"></span>
             <span class="status-text">ALL SYSTEMS OPERATIONAL</span>
+          </div>
+        </div>
+
+        <!-- Interactive Terminal Component -->
+        <div class="hero-terminal-card" style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(0, 238, 255, 0.3); border-radius: 1.4rem; backdrop-filter: blur(20px); overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.15); width: 100%; margin-bottom: 2.5rem;">
+          <div class="terminal-header" style="background: rgba(30, 41, 59, 0.8); padding: 1rem 1.4rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1);">
+            <div style="display: flex; gap: 0.6rem; align-items: center;">
+              <span style="width: 1rem; height: 1rem; border-radius: 50%; background: #ff5f56; display: inline-block;"></span>
+              <span style="width: 1rem; height: 1rem; border-radius: 50%; background: #ffbd2e; display: inline-block;"></span>
+              <span style="width: 1rem; height: 1rem; border-radius: 50%; background: #27c93f; display: inline-block;"></span>
+              <span style="font-family: monospace; font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-left: 0.8rem;">codemate.os — v3.2-prod</span>
+            </div>
+            <span style="font-family: monospace; font-size: 1rem; color: #00e676; display: flex; align-items: center; gap: 0.4rem;"><span style="width: 0.6rem; height: 0.6rem; border-radius: 50%; background: #00e676; display: inline-block; animation: pulse-green 1.8s infinite;"></span> RUNTIME ONLINE</span>
+          </div>
+
+          <div class="terminal-tabs" style="display: flex; background: rgba(15, 23, 42, 0.9); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 0 0.8rem;">
+            <button class="hero-term-tab active" data-tab="repair" style="background: transparent; border: none; border-bottom: 2px solid var(--main-color); color: var(--main-color); padding: 0.8rem 1.2rem; font-size: 1.1rem; font-family: monospace; cursor: pointer; font-weight: 600;">Autonomous Repair</button>
+            <button class="hero-term-tab" data-tab="ast" style="background: transparent; border: none; border-bottom: 2px solid transparent; color: rgba(255,255,255,0.6); padding: 0.8rem 1.2rem; font-size: 1.1rem; font-family: monospace; cursor: pointer;">AST Tracer</button>
+            <button class="hero-term-tab" data-tab="metrics" style="background: transparent; border: none; border-bottom: 2px solid transparent; color: rgba(255,255,255,0.6); padding: 0.8rem 1.2rem; font-size: 1.1rem; font-family: monospace; cursor: pointer;">Metrics</button>
+          </div>
+
+          <div class="terminal-body" id="hero-term-body" style="padding: 1.6rem; font-family: monospace; font-size: 1.2rem; line-height: 1.7; min-height: 160px; color: #e2e8f0;">
+            <div id="tab-content-repair">
+              <div style="color: #64748b;">[0.00s] Listening on wss://codemate.os/ws/execution...</div>
+              <div style="color: #ef4444;">[0.12s] Intercepted TypeError: list indices must be integers or slices, not str</div>
+              <div style="color: #38bdf8;">[0.28s] AST Tracer: Extracted frame line #42 (items[key])</div>
+              <div style="color: #a855f7;">[0.45s] Agent: Generating unified diff patch (- items[key] + items[int(key)])</div>
+              <div style="color: #22c55e; font-weight: 600;">[0.61s] Subprocess Sandbox: Verification PASS (exit_code=0)</div>
+            </div>
+            <div id="tab-content-ast" style="display: none;">
+              <div style="color: #38bdf8;">[sys.settrace] Active frame monitoring enabled</div>
+              <div style="color: #94a3b8;">call frame -> fn process_dataset(records)</div>
+              <div style="color: #94a3b8;">line #14 -> records_count = len(records) # 100000</div>
+              <div style="color: #22c55e;">return value -> dict[result_status: 200 OK]</div>
+            </div>
+            <div id="tab-content-metrics" style="display: none;">
+              <div style="color: #38bdf8;">• WebSockets Latency: &lt;50ms (Persistent)</div>
+              <div style="color: #22c55e;">• AI for Bharat 2026: Shortlisted (Prototype Stage)</div>
+              <div style="color: #a855f7;">• PII Security: Microsoft Presidio Redaction Active</div>
+              <div style="color: #eab308;">• Certifications: 27+ Verified Credentials</div>
+            </div>
+          </div>
+
+          <div class="terminal-footer" style="padding: 1rem 1.4rem; background: rgba(30, 41, 59, 0.6); border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: space-between;">
+            <button id="btn-run-hero-diag" style="background: rgba(0, 238, 255, 0.15); border: 1px solid rgba(0, 238, 255, 0.4); color: #00eeff; padding: 0.6rem 1.2rem; border-radius: 0.6rem; font-family: monospace; font-size: 1.1rem; cursor: pointer; font-weight: 600; transition: 0.3s ease;"><i class="bx bx-play"></i> Run Diagnostics</button>
+            <span style="font-family: monospace; font-size: 1.1rem; color: rgba(255,255,255,0.5);">Status: 200 OK</span>
           </div>
         </div>
         
