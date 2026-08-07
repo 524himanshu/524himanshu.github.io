@@ -1366,18 +1366,21 @@ span {
 /* ===== toast ===== */
 .toast {
   position: fixed;
-  bottom: 30px;
+  bottom: 95px;
   right: 30px;
-  background: #00bfa6;
-  color: white;
+  background: rgba(15, 23, 42, 0.95);
+  color: #00eeff;
+  border: 1px solid rgba(0, 238, 255, 0.4);
   padding: 14px 24px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.4s ease;
-  font-size: 16px;
-  z-index: 9999;
+  font-size: 1.4rem;
+  font-weight: 600;
+  z-index: 10005;
   pointer-events: none;
 }
 
