@@ -101,19 +101,28 @@ contactForm.addEventListener('submit', async (e) => {
   submitBtn.disabled = true;
 
   const formData = {
+    access_key: '0cda509b-1159-432e-8383-8db81a3a5262',
     name: form.name.value,
     email: form.email.value,
     phone: form.phone.value,
-    subject: form.subject.value,
+    subject: form.subject.value || 'Portfolio Contact Form Submission',
     message: form.message.value,
+    from_name: 'Himanshu Portfolio Website',
   };
 
   try {
-    const res = await fetch('https://five24himanshu-github-io.onrender.com/api/contact', {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+
+    // Background backup save to Render MongoDB
+    fetch('https://five24himanshu-github-io.onrender.com/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
-    });
+    }).catch(err => console.warn('Backup save error', err));
 
     const data = await res.json();
     
