@@ -55,6 +55,10 @@ EXCLUDE_KEYWORDS = [
     'sales', 'hr', '5+ years', '6+ years', '7+ years', '10+ years', 'manager', 'marketing', 'flutter'
 ]
 
+DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", "https://discord.com/api/webhooks/1538106133951287306/DopIlIttw3NZWxN2jY7bLjGn6AqbJnVdEsFTDhe_5XgK5E3Hz6TN5yAzDTHq0kwlAzkS")
+
+import json
+
 def send_telegram_alert(text):
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
     payload = urllib.parse.urlencode({'chat_id': USER_CHAT_ID, 'text': text}).encode('utf-8')
@@ -66,6 +70,21 @@ def send_telegram_alert(text):
     except Exception as e:
         print("[ALERT DELIVERY ERROR]:", e, flush=True)
         return False
+
+def send_discord_alert(text):
+    if not DISCORD_WEBHOOK_URL:
+        return
+    payload = {'content': text}
+    req = urllib.request.Request(
+        DISCORD_WEBHOOK_URL,
+        data=json.dumps(payload).encode('utf-8'),
+        headers={'Content-Type': 'application/json', 'User-Agent': 'DiscordBot'}
+    )
+    try:
+        with urllib.request.urlopen(req) as resp:
+            print("[DISCORD WEBHOOK ALERT SENT SUCCESS]", flush=True)
+    except Exception as e:
+        print("[DISCORD ALERT ERROR]:", e, flush=True)
 
 client = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
 
@@ -87,9 +106,10 @@ async def handler(event):
         form_links = re.findall(r'https?://[^\s]+', text)
         form_url_str = f"\n\n🔗 Apply Links:\n" + "\n".join(form_links) if form_links else ""
         
-        alert_msg = f"🎯 HIGH-MATCH REFERRAL ALERT!\nSource: {chat_title}\n\n{text}{form_url_str}"
-        print(f"[MATCH DETECTED] From '{chat_title}' - Dispatching alert...", flush=True)
+        alert_msg = f"🎯 **HIGH-MATCH REFERRAL ALERT!**\n**Source:** {chat_title}\n\n{text}{form_url_str}"
+        print(f"[MATCH DETECTED] From '{chat_title}' - Dispatching alerts...", flush=True)
         send_telegram_alert(alert_msg)
+        send_discord_alert(alert_msg)
 
 async def main():
     print("Starting 24/7 Cloud Telegram Job Filter Bot...", flush=True)
