@@ -86,6 +86,31 @@ def send_discord_alert(text):
     except Exception as e:
         print("[DISCORD ALERT ERROR]:", e, flush=True)
 
+SHEET_WEBHOOK_URL = os.environ.get("SHEET_WEBHOOK_URL", "")
+
+def log_to_google_sheet(company: str, role: str, source: str, link: str):
+    """Log matching referral to Google Sheets via Apps Script Web App"""
+    if not SHEET_WEBHOOK_URL:
+        return
+    payload = json.dumps({
+        "company": company,
+        "role": role,
+        "source": source,
+        "link": link,
+        "date": __import__('datetime').datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC'),
+        "status": "Pending"
+    }).encode('utf-8')
+    req = urllib.request.Request(
+        SHEET_WEBHOOK_URL,
+        data=payload,
+        headers={'Content-Type': 'application/json'}
+    )
+    try:
+        with urllib.request.urlopen(req) as resp:
+            print("[GOOGLE SHEET LOG SUCCESS]", flush=True)
+    except Exception as e:
+        print(f"[GOOGLE SHEET LOG ERROR]: {e}", flush=True)
+
 client = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
 
 @client.on(events.NewMessage)
@@ -106,10 +131,17 @@ async def handler(event):
         form_links = re.findall(r'https?://[^\s]+', text)
         form_url_str = f"\n\n🔗 Apply Links:\n" + "\n".join(form_links) if form_links else ""
         
+        # Extract company/role from text (best effort)
+        lines = [l.strip() for l in text.split('\n') if l.strip()]
+        company = lines[0][:60] if lines else 'Unknown'
+        role = lines[1][:60] if len(lines) > 1 else 'SDE / AI Engineer'
+        top_link = form_links[0] if form_links else ''
+
         alert_msg = f"🎯 **HIGH-MATCH REFERRAL ALERT!**\n**Source:** {chat_title}\n\n{text}{form_url_str}"
         print(f"[MATCH DETECTED] From '{chat_title}' - Dispatching alerts...", flush=True)
         send_telegram_alert(alert_msg)
         send_discord_alert(alert_msg)
+        log_to_google_sheet(company, role, chat_title, top_link)
 
 async def main():
     print("Starting 24/7 Cloud Telegram Job Filter Bot...", flush=True)

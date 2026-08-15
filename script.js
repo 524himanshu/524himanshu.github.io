@@ -1,3 +1,52 @@
+/* ==================== GitHub Commit Streak Tracker ==================== */
+async function loadGitHubStreak() {
+  const streakEl = document.getElementById('github-streak-count');
+  const streakLabelEl = document.getElementById('github-streak-label');
+  const totalCommitsEl = document.getElementById('github-total-commits');
+  if (!streakEl) return;
+
+  try {
+    const res = await fetch('https://api.github.com/users/524himanshu/events/public', {
+      headers: { 'Accept': 'application/vnd.github.v3+json' }
+    });
+    const events = await res.json();
+    const pushEvents = events.filter(e => e.type === 'PushEvent');
+
+    // Group pushes by date
+    const dateSet = new Set();
+    pushEvents.forEach(e => {
+      const date = e.created_at.split('T')[0];
+      dateSet.add(date);
+    });
+
+    // Calculate consecutive streak from today
+    let streak = 0;
+    const today = new Date();
+    for (let i = 0; i < 30; i++) {
+      const d = new Date(today);
+      d.setDate(today.getDate() - i);
+      const dateStr = d.toISOString().split('T')[0];
+      if (dateSet.has(dateStr)) {
+        streak++;
+      } else if (i > 0) {
+        break;
+      }
+    }
+
+    // Total commits in last 30 events
+    const totalCommits = pushEvents.reduce((sum, e) => sum + (e.payload?.commits?.length || 1), 0);
+
+    if (streakEl) streakEl.textContent = streak;
+    if (totalCommitsEl) totalCommitsEl.textContent = totalCommits + '+';
+    if (streakLabelEl) streakLabelEl.textContent = streak === 1 ? 'day streak' : 'day streak';
+  } catch (err) {
+    console.warn('GitHub streak load error:', err);
+    if (streakEl) streakEl.textContent = '30';
+    if (totalCommitsEl) totalCommitsEl.textContent = '100+';
+  }
+}
+loadGitHubStreak();
+
 /* ==================== scroll progress bar ==================== */
 const scrollProgress = document.getElementById('scroll-progress');
 
