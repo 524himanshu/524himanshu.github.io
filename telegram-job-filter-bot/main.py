@@ -22,7 +22,22 @@ def run_http_server():
     print(f"HTTP Health Check Server running on port {port}", flush=True)
     server.serve_forever()
 
+def run_self_ping():
+    service_url = os.environ.get("RENDER_EXTERNAL_URL")
+    if not service_url:
+        return
+    import time
+    while True:
+        time.sleep(600) # Ping every 10 minutes
+        try:
+            req = urllib.request.Request(service_url, headers={'User-Agent': 'KeepAlive/1.0'})
+            with urllib.request.urlopen(req) as resp:
+                print(f"[KEEP-ALIVE PING SUCCESS] Status {resp.status}", flush=True)
+        except Exception as e:
+            print("[KEEP-ALIVE PING ERROR]:", e, flush=True)
+
 threading.Thread(target=run_http_server, daemon=True).start()
+threading.Thread(target=run_self_ping, daemon=True).start()
 
 API_ID = int(os.environ.get("API_ID", "39647045"))
 API_HASH = os.environ.get("API_HASH", "612a51e2bbd5358b850d2abefcfeec51")
