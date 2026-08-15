@@ -3,8 +3,26 @@ import re
 import urllib.request
 import urllib.parse
 import asyncio
+from http.server import HTTPServer, BaseHTTPRequestHandler
+import threading
 from telethon import TelegramClient, events
 from telethon.sessions import StringSession
+
+# Lightweight HTTP Health Check Server for Render 100% Free Web Service
+class HealthCheckHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header("Content-type", "text/plain")
+        self.end_headers()
+        self.wfile.write(b"OK - Telegram Job Filter Bot is Running 24/7")
+
+def run_http_server():
+    port = int(os.environ.get("PORT", 8080))
+    server = HTTPServer(("0.0.0.0", port), HealthCheckHandler)
+    print(f"HTTP Health Check Server running on port {port}", flush=True)
+    server.serve_forever()
+
+threading.Thread(target=run_http_server, daemon=True).start()
 
 API_ID = int(os.environ.get("API_ID", "39647045"))
 API_HASH = os.environ.get("API_HASH", "612a51e2bbd5358b850d2abefcfeec51")
