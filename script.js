@@ -117,14 +117,6 @@ contactForm.addEventListener('submit', async (e) => {
       body: JSON.stringify(formData),
     });
 
-    // Send instant Telegram notification to Himanshu
-    const tgMsg = `🚨 New Portfolio Contact Inquiry!\n\n👤 Name: ${formData.name}\n📧 Email: ${formData.email}\n📞 Phone: ${formData.phone || 'N/A'}\n📌 Subject: ${formData.subject}\n💬 Message:\n${formData.message}`;
-    fetch('https://api.telegram.org/bot8831106711:AAEg2vTdflOzzEMqff4RX-oOAxCSxYNC0js/sendMessage', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({ chat_id: '1134023251', text: tgMsg }),
-    }).catch(err => console.warn('Telegram notification error', err));
-
     // Background backup save to Render MongoDB
     fetch('https://five24himanshu-github-io.onrender.com/api/contact', {
       method: 'POST',

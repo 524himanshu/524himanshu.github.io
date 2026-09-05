@@ -39,11 +39,11 @@ def run_self_ping():
 threading.Thread(target=run_http_server, daemon=True).start()
 threading.Thread(target=run_self_ping, daemon=True).start()
 
-API_ID = int(os.environ.get("API_ID", "39647045"))
-API_HASH = os.environ.get("API_HASH", "612a51e2bbd5358b850d2abefcfeec51")
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "8831106711:AAEg2vTdflOzzEMqff4RX-oOAxCSxYNC0js")
-USER_CHAT_ID = os.environ.get("USER_CHAT_ID", "1134023251")
-STRING_SESSION = os.environ.get("STRING_SESSION", "1BVtsOIYBu0DqN21g1b-m3P_H27JITJoZ9luhduzqbK9yPeBBWS3PrfWz_Lz28RgLu87jiVp-tVH3EpI1jCLiKyXamEVi1KVAHxlpbDo1E75EJu_TS2e1rpEMa_RHmABU6lmWho6GiK762X3scP6Si-IgguNR7J5k9ueJ-fCquh3nsPhlzzGizWMipeEKL-9qCQRybkjbTZUuB0Avc_gKRGcnPmxSgYl9iVEpXd_urHgneCyyCmYIvrWcYJajpprZoH5Foe5Y8RGpWGt7bYHWOqFwkZ65fG4X0BqWTNg4BSThKYA6oQomZnf1MccvaNpZMlJstXs4-7vbmJk5imYkfIUTXj6_29Y=")
+API_ID = int(os.environ.get("API_ID", 0))
+API_HASH = os.environ.get("API_HASH", "")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+USER_CHAT_ID = os.environ.get("USER_CHAT_ID", "")
+STRING_SESSION = os.environ.get("STRING_SESSION", "")
 
 MATCH_KEYWORDS = [
     'ai', 'agent', 'full-stack', 'fullstack', 'full stack', 'python', 'fastapi',
@@ -55,11 +55,13 @@ EXCLUDE_KEYWORDS = [
     'sales', 'hr', '5+ years', '6+ years', '7+ years', '10+ years', 'manager', 'marketing', 'flutter'
 ]
 
-DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", "https://discord.com/api/webhooks/1538106133951287306/DopIlIttw3NZWxN2jY7bLjGn6AqbJnVdEsFTDhe_5XgK5E3Hz6TN5yAzDTHq0kwlAzkS")
+DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", "")
 
 import json
 
 def send_telegram_alert(text):
+    if not BOT_TOKEN or not USER_CHAT_ID:
+        return False
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
     payload = urllib.parse.urlencode({'chat_id': USER_CHAT_ID, 'text': text}).encode('utf-8')
     req = urllib.request.Request(url, data=payload)
