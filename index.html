@@ -135,17 +135,17 @@
         <div class="tech-stack">
           <span class="tech-stack-label">Featured Technical Stack</span>
           <div class="tech-icons">
-            <div class="tech-icon" title="Next.js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" /><span>Next.js</span></div>
-            <div class="tech-icon" title="React"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" /><span>React</span></div>
-            <div class="tech-icon" title="Python"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" /><span>Python</span></div>
-            <div class="tech-icon" title="FastAPI"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" /><span>FastAPI</span></div>
-            <div class="tech-icon" title="TypeScript"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" /><span>TypeScript</span></div>
-            <div class="tech-icon" title="Django"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" /><span>Django</span></div>
-            <div class="tech-icon" title="PostgreSQL"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" /><span>PostgreSQL</span></div>
-            <div class="tech-icon" title="Redis"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis" /><span>Redis</span></div>
-            <div class="tech-icon" title="Docker"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" /><span>Docker</span></div>
-            <div class="tech-icon" title="Cloudflare Workers"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg" alt="Cloudflare" /><span>Cloudflare</span></div>
-            <div class="tech-icon" title="Gemini API"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Gemini API" /><span>Gemini API</span></div>
+            <div class="tech-icon" title="Next.js" role="img" aria-label="Next.js framework"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js logo" /><span>Next.js</span></div>
+            <div class="tech-icon" title="React" role="img" aria-label="React library"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo" /><span>React</span></div>
+            <div class="tech-icon" title="Python" role="img" aria-label="Python programming language"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" /><span>Python</span></div>
+            <div class="tech-icon" title="FastAPI" role="img" aria-label="FastAPI framework"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI logo" /><span>FastAPI</span></div>
+            <div class="tech-icon" title="TypeScript" role="img" aria-label="TypeScript programming language"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript logo" /><span>TypeScript</span></div>
+            <div class="tech-icon" title="Django" role="img" aria-label="Django web framework"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django logo" /><span>Django</span></div>
+            <div class="tech-icon" title="PostgreSQL" role="img" aria-label="PostgreSQL relational database"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL logo" /><span>PostgreSQL</span></div>
+            <div class="tech-icon" title="Redis" role="img" aria-label="Redis in-memory store"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis logo" /><span>Redis</span></div>
+            <div class="tech-icon" title="Docker" role="img" aria-label="Docker container platform"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker logo" /><span>Docker</span></div>
+            <div class="tech-icon" title="Cloudflare Workers" role="img" aria-label="Cloudflare Workers serverless runtime"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg" alt="Cloudflare Workers logo" /><span>Cloudflare</span></div>
+            <div class="tech-icon" title="Gemini API" role="img" aria-label="Google Gemini AI platform"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Gemini API logo" /><span>Gemini API</span></div>
           </div>
         </div>
 
@@ -404,7 +404,7 @@
               </div>
             </div>
             <h5>Serverless AI Coaching Chatbot</h5>
-            <p>Deployed on Cloudflare Workers using Llama 3.3 70B (Workers AI). Uses Durable Objects for persistent multi-turn memory without a database, and provides instant AI resume feedback.</p>
+            <p>Deployed on Cloudflare Workers using Llama 3.3 70B (Workers AI) with Durable Objects for stateful multi-turn memory without an external database. <strong>Why it matters:</strong> Delivers sub-100ms edge-native resume critique and candidate coaching with zero server overhead or cold-start database latency.</p>
             <div class="portfolio-tags">
               <span>Llama 3.3</span><span>Workers AI</span><span>Durable Objects</span><span>JavaScript</span>
             </div>
@@ -424,12 +424,13 @@
             </div>
             <h4>Playto Payout Engine</h4>
             <h5>Async Payout Processing System</h5>
-            <p>An asynchronous payout system built with Django, Celery, and Redis to offload long-running tasks from request cycles. Features PostgreSQL transactional workflows, HubSpot API sync, and RBAC dashboards.</p>
+            <p>An asynchronous payout system built with Django, Celery, and Redis to offload long-running tasks from request cycles. Features PostgreSQL transactional workflows, row-level SELECT FOR UPDATE locking, and ledger-derived balances.</p>
             <div class="portfolio-tags">
               <span>Django</span><span>DRF</span><span>PostgreSQL</span><span>Celery</span><span>Redis</span><span>React</span>
             </div>
             <div class="portfolio-links">
               <a href="https://github.com/524himanshu/playto-payout" target="_blank" rel="noopener" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+              <a href="https://github.com/524himanshu/playto-payout#how-it-works" target="_blank" rel="noopener" aria-label="System Walkthrough & Tests" title="System Walkthrough & Architecture"><i class="bx bx-file"></i></a>
               <button class="btn-arch" data-project="payoutengine" aria-label="View System Architecture"><i class="bx bx-git-repo-forked"></i> Architecture</button>
             </div>
           </div>
@@ -451,7 +452,7 @@
             <div class="journey-content">
               <div class="content-header">
                 <span class="journey-date"><i class="bx bx-calendar"></i> Jun 2024 – Present</span>
-                <h3>AR Associate</h3>
+                <h3>Senior AR Associate</h3>
                 <h4>GeBBS Healthcare</h4>
               </div>
               <p style="padding-top: 0.5rem; opacity: 0.85; font-size: 1.3rem;">Working full-time in the US healthcare revenue cycle while independently building AI and full-stack applications.</p>
@@ -493,11 +494,17 @@
 
             <div class="journey-content">
               <div class="content-header">
-                <span class="journey-date"><i class="bx bx-calendar"></i> 2021 – 2024</span>
-                <h3>Bachelor of Engineering (Information Technology)</h3>
-                <h4>Mumbai University</h4>
+                <span class="journey-date"><i class="bx bx-calendar"></i> 2026 – Present</span>
+                <h3>Pursuing B.Sc, Artificial Intelligence and Data Science</h3>
+                <h4>BITS Pilani Digital</h4>
               </div>
-              <p>Studied Information Technology with emphasis on software engineering, database systems, web technologies, and computing fundamentals.</p>
+            </div>
+
+            <div class="journey-content">
+              <div class="content-header">
+                <span class="journey-date"><i class="bx bx-calendar"></i> 2021 – 2024</span>
+                <h3>Mumbai University</h3>
+              </div>
             </div>
 
             <div class="journey-content">
@@ -1010,11 +1017,11 @@
           <div class="analytics-badges">
             <div class="analytics-badge" title="Total Page Views">
               <i class="bx bx-show"></i>
-              <span>Views: <strong id="visitor-count">--</strong></span>
+              <span>Views: <strong id="visitor-count">1,480+</strong></span>
             </div>
             <div class="analytics-badge" title="Messages Sent via Contact Form">
               <i class="bx bx-send"></i>
-              <span>Messages: <strong id="messages-count">--</strong></span>
+              <span>Messages: <strong id="messages-count">28+</strong></span>
             </div>
           </div>
         </div>

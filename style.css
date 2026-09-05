@@ -3228,6 +3228,69 @@ body.dark-theme .playground-panel {
   }
 }
 
+@media (max-width: 768px) {
+  .playground {
+    padding: 6rem 4% 5rem;
+  }
+  .playground-panel {
+    padding: 2rem 1.5rem;
+  }
+  .playground-container {
+    gap: 2.5rem;
+  }
+  .rag-stage-card {
+    padding: 1.2rem;
+  }
+  .llm-response {
+    padding: 0.9rem;
+  }
+  .response-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .playground-panel {
+    padding: 1.6rem 1.2rem;
+    border-radius: 1.2rem;
+  }
+  .controls-panel h3 {
+    font-size: 1.6rem;
+  }
+  .slider-container {
+    gap: 1rem;
+  }
+  .rag-sug-tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+  }
+  .console-output {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+  .journey-box {
+    margin-left: 0.4rem;
+    padding-left: 1.2rem;
+  }
+  .journey-content {
+    padding: 1.6rem 1.2rem;
+  }
+  .journey-content h3 {
+    font-size: 1.5rem;
+  }
+  .journey-content h4 {
+    font-size: 1.2rem;
+  }
+  .journey-content::before {
+    left: -1.9rem;
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  .journey-bullets li {
+    font-size: 1.2rem;
+  }
+}
+
 
 /* ===== secondary outline button style ===== */
 .btn-sec {
