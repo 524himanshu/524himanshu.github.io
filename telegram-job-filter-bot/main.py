@@ -113,9 +113,13 @@ def log_to_google_sheet(company: str, role: str, source: str, link: str):
     except Exception as e:
         print(f"[GOOGLE SHEET LOG ERROR]: {e}", flush=True)
 
-client = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
+if not API_ID or not API_HASH or not STRING_SESSION:
+    print("[STARTUP WARNING] API_ID, API_HASH, or STRING_SESSION is missing from environment variables!", flush=True)
+    print("Please add API_ID, API_HASH, STRING_SESSION, and BOT_TOKEN to your Render Environment Variables.", flush=True)
+    client = None
+else:
+    client = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
 
-@client.on(events.NewMessage)
 async def handler(event):
     if not event.raw_text:
         return
@@ -145,7 +149,16 @@ async def handler(event):
         send_discord_alert(alert_msg)
         log_to_google_sheet(company, role, chat_title, top_link)
 
+if client:
+    client.add_event_handler(handler, events.NewMessage)
+
 async def main():
+    if not client:
+        print("[IDLE MODE] HTTP Health Check is running, but Telegram UserBot is waiting for credentials in Render Environment Variables.", flush=True)
+        while True:
+            await asyncio.sleep(60)
+        return
+
     print("Starting 24/7 Cloud Telegram Job Filter Bot...", flush=True)
     await client.start()
     me = await client.get_me()
